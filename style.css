@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+}
+
+header{
+    background: #000;
+    border-bottom: 2px solid gray;
+    margin: 0px 16px;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+#nav-bar{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 0px;
+}
+
+header #nav-bar ul li{
+    position: relative;
+    float: left;
+}
+
+header #nav-bar ul li a{
+    font-size: 20px;
+    display: block;
+    padding: 20px;
+    color: #fff;
+    background: #000;
+    text-decoration: none;
+}
+
+header #nav-bar ul li a:hover{
+    color: rgb(128, 128, 128);
+}
+
+header #nav-bar ul li ul{
+    position: absolute;
+    width: 200px;
+    left: 0;
+    display: none;
+    border: 1px solid rgb(128, 128, 128);
+}
+
+header #nav-bar ul li ul li{
+    width: 100%;
+    border-top: 1px solid rgb(128, 128, 128);
+}
+
+header #nav-bar ul li ul li ul{
+    left: 200px;
+    top: 0;
+}
+
+header #nav-bar ul li:focus-within > ul,
+header #nav-bar ul li:hover > ul{
+    display: initial;
+}
+
+
+.logo{
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+    font-family: "Playfair Display", serif;
+    font-size: 22px;
+}
+
+.logo h1{
+    color: #ffffff;
+}
+
+.nav-item{
+    margin: 0 15px;
+}
+
+.nav-list,
+.icones{
+    display: flex;
+    align-items: center;
+}
+
+.nav-list ul,
+.icones ul{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.nav-link,
+.ico-link{
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: #ffffff;
+    font-weight: 400;
+    margin: 0px 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+.nav-link:hover{
+    color: gray;
+}
+
+
+.login-button button{
+    border: none;
+    background-color: #fff;
+    padding: 0px 15px;
+    border-radius: 100px;
+    text-align: center;
+    margin: 10px 0px;
+}
+
+.login-button button i{
+    font-size: 18px;
+    margin: 10px 10px;
+}
+
+.login-button button a{
+    margin: 0px 10px 0px 0px;
+}
+
+
+.login-button button:hover{
+    opacity: 0.8;
+}
+
+.login-button button a{
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    font-size: 1.1rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.mobile-menu-icon{
+    display: none;
+}
+
+.mobile-menu{
+    display: none;
+}
+
+@media screen and (max-width: 972px){
+    #nav-bar{
+        padding: 1.5rem 4rem;
+    }
+    header #nav-bar ul li ul{
+        position: relative;
+        width: 100%;
+    }
+    header #nav-bar ul li ul li{
+        background: #C5D9CC;
+    }
+    header #nav-bar ul li ul li ul{
+        width: 100%;
+        left: 0;
+    }
+    #menu-bar:checked ~ #nav-bar{
+        display: initial;
+    }
+    .nav-item{
+        display: none;
+    }
+    .login-button{
+        display: none;
+    }
+    .mobile-menu-icon{
+        display: block;
+    }
+    .mobile-menu-icon button{
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        margin: 14px 0px;
+    }
+    .mobile-menu ul{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 1.rem;
+    }
+
+    .mobile-menu .nav-item{
+    display: block;
+    padding-top: 1.2rem;
+    }
+    .mobile-menu .login-button{
+        display: block;
+        padding: 1rem 2rem;
+    }
+    .mobile-menu .login-button button{
+        width: 100%;
+    }
+    .open{
+        display: block;
+    }
+
+}
