@@ -14,7 +14,7 @@ body{
 
 header{
     background: #000;
-    border-bottom: 2px solid gray;
+    border-bottom: 2px solid pink;
     margin: 0px 16px;
     position: fixed;
     z-index: 1000;
@@ -23,18 +23,21 @@ header{
     right: 0;
 }
 
-#nav-bar{
+#nav-bar,
+.mobile-menu{
     display: flex;
     justify-content: space-between;
     padding: 0px 0px;
 }
 
-header #nav-bar ul li{
+header #nav-bar ul li,
+.mobile-menu ul li{
     position: relative;
     float: left;
 }
 
-header #nav-bar ul li a{
+header #nav-bar ul li a,
+header .mobile-menu ul li a{
     font-size: 20px;
     display: block;
     padding: 20px;
@@ -43,30 +46,34 @@ header #nav-bar ul li a{
     text-decoration: none;
 }
 
-header #nav-bar ul li a:hover{
-    color: rgb(128, 128, 128);
+header #nav-bar ul li a:hover,
+.mobile-menu ul li a:hover{
+    color: pink;
 }
 
-header #nav-bar ul li ul{
+header #nav-bar ul li ul,
+.mobile-menu ul li ul{
     position: absolute;
     width: 200px;
     left: 0;
     display: none;
-    border: 1px solid rgb(128, 128, 128);
 }
 
-header #nav-bar ul li ul li{
+header #nav-bar ul li ul li,
+.mobile-menu ul li ul li{
     width: 100%;
-    border-top: 1px solid rgb(128, 128, 128);
 }
 
-header #nav-bar ul li ul li ul{
+header #nav-bar ul li ul li ul,
+.mobile-menu ul li ul li ul{
     left: 200px;
     top: 0;
 }
 
 header #nav-bar ul li:focus-within > ul,
-header #nav-bar ul li:hover > ul{
+header #nav-bar ul li:hover > ul,
+.mobile-menu ul li:focus-within > ul,
+.mobile-menu ul li:hover > ul{
     display: initial;
 }
 
@@ -80,7 +87,8 @@ header #nav-bar ul li:hover > ul{
 }
 
 .logo h1{
-    color: #ffffff;
+    background-image: linear-gradient(rgb(108, 207, 240), pink);
+    color: #000;
 }
 
 .nav-item{
@@ -111,13 +119,13 @@ header #nav-bar ul li:hover > ul{
 
 }
 .nav-link:hover{
-    color: gray;
+    color: pink;
 }
 
 
 .login-button button{
     border: none;
-    background-color: #fff;
+    background: linear-gradient(rgb(108, 207, 240), pink);
     padding: 0px 15px;
     border-radius: 100px;
     text-align: center;
@@ -154,23 +162,38 @@ header #nav-bar ul li:hover > ul{
     display: none;
 }
 
+.submenu {
+    display: none;
+}
+
+.submenu.active {
+    display: block;
+}
+
+
 @media screen and (max-width: 972px){
     #nav-bar{
         padding: 1.5rem 4rem;
     }
-    header #nav-bar ul li ul{
+    header .nav-list ul li,
+    .mobile-menu ul li{
+        width: 100%;
+    }
+    header .nav-list ul li ul,
+    header .mobile-menu ul li ul{
         position: relative;
         width: 100%;
     }
-    header #nav-bar ul li ul li{
-        background: #C5D9CC;
+    header .nav-list ul li ul li,
+    header .mobile-menu ul li ul li{
+        background: transparent;
     }
-    header #nav-bar ul li ul li ul{
+    header .nav-list ul li ul li ul {
         width: 100%;
         left: 0;
     }
-    #menu-bar:checked ~ #nav-bar{
-        display: initial;
+    .icones{
+        display: none;
     }
     .nav-item{
         display: none;
@@ -191,7 +214,6 @@ header #nav-bar ul li:hover > ul{
         display: flex;
         flex-direction: column;
         text-align: center;
-        padding-bottom: 1.rem;
     }
 
     .mobile-menu .nav-item{
